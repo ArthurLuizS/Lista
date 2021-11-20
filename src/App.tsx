@@ -7,8 +7,9 @@ import { ListItem } from './components/ListItem'
 const App = () =>{
 
   const [list, setList] = useState<item[]>([
-    {id: 1, name: 'Comprar Pão', done: false},
-    {id: 2, name: 'Comprar Bolo', done: true}
+    {id: 1, name: 'Comprar Pão', done: true},
+    {id: 2, name: 'Comprar Bolo', done: false},
+    {id: 3, name: 'Comprar Salgados', done: false}
   ]);
 
   return(
