@@ -8,13 +8,13 @@ type Props = {
 
 export const ListItem = ({item} : Props) =>{
 
-    const [isCheked, setisChecked] = useState(item.done)
+    const [isChecked, setisChecked] = useState(item.done)
 
     return(
-         <C.container> 
+         <C.container done = {isChecked}> 
             <input 
                 type ='checkbox'
-                 checked={isCheked}
+                 checked={isChecked}
                 onChange={e => setisChecked(e.target.checked)}     
             />
             <label> {item.name} </label> 
