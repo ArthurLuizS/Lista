@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
-export const container = styled.div`
+type ContainerProps = {
+    done: boolean;
+}
+
+export const container = styled.div(( { done }: ContainerProps) => (
+    `
     display: flex;
     background-color: #20212C;
     padding: 10px;
@@ -15,6 +20,9 @@ export const container = styled.div`
     }
 
     label{
-        color: #CCC
+        color: #CCC;
+        text-decoration: ${done ? 'line-through' : 'initial'} ;
     }
-`;
+        
+`
+));
