@@ -5,6 +5,7 @@ import { ListItem } from './components/ListItem'
 import { AddArea} from './components/AddArea'
 
 
+
 const App = () =>{
 
   const [list, setList] = useState<item[]>([
@@ -23,6 +24,12 @@ const App = () =>{
       setList(newList)
     }
 
+    const handleAddTaskId = (taskId: number, changeDone : boolean) =>{
+      let listTemp = [...list];
+      listTemp[taskId].done = changeDone;
+      setList(listTemp)
+    }
+
   return(
     <C.Container>
         <C.Area>
@@ -31,7 +38,7 @@ const App = () =>{
           <AddArea onEnter = {handleAddTask}/>
 
           {list.map((item,index) => (
-            <ListItem key = {index} item = {item}/>
+            <ListItem key = {index} item = {item} taskId ={handleAddTaskId}/>
           ))}
 
         </C.Area>
