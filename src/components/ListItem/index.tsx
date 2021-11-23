@@ -29,7 +29,7 @@ export const ListItem = ({item , taskId} : Props) =>{
                  onChange={e => catchId(e.target.checked)}   
                  
             />
-            <label> {item.name} </label> 
+            <label> {item.name} - {item.done.toString()} </label> 
          </C.container>
     )
 }
